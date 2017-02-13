@@ -11,14 +11,15 @@ var markov;
 
 // Preload the seed data
 function preload() {
-  lines = loadStrings('itp.txt');
+//  lines = loadStrings('itp.txt');
+  lines = loadStrings('gettysburg.txt');
 }
 
 function setup() {
   noCanvas();
   // The Markov Generator
   // First argument is N-gram length, second argument is max length of generated text
-  markov = new MarkovGenerator(3, 100);
+  markov = new MarkovGenerator(4, 50);
   // Feed all the lines from the text file into the generator
   for (var i = 0; i < lines.length; i++) {
     markov.feed(lines[i]);
